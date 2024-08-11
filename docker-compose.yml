@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .  # Contexte de construction du Dockerfile (répertoire courant)
+    ports:
+      - "3000:3000"  # Mappe le port 3000 du conteneur au port 3000 de l'hôte
+    volumes:
+      - .:/app  # Monte le répertoire courant dans le conteneur
+    environment:
+      NODE_ENV: development  # Variables d'environnement pour le conteneur
+    command: npm start  # Commande pour démarrer l'application
+
+# Vous pouvez ajouter d'autres services ici, comme une base de données
